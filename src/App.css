@@ -1,38 +1,91 @@
-.App {
-  text-align: center;
+@import url("https://fonts.googleapis.com/css2?family=Bangers&family=Rubik&display=swap");
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: teal;
+  color: black;
+  font-family: "Rubik", sans-serif
+  
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.App{
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
+  flex-direction: column;
+  
 }
 
-.App-link {
-  color: #61dafb;
+#board{
+  display: flex;
+  width: 300px;
+  flex-wrap: wrap;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.square{
+  width: 100px;
+  height: 100px;
+  border: 3px solid darkorange;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 45px;
+  cursor: pointer;
+  user-select: none;
+}
+
+.square:hover{
+  background: #eee;
+}
+
+#game{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+#head{
+  font-size: 25px;
+  padding: 15px;
+  color: antiquewhite;
+}
+
+.button{
+  font-size: 25px;
+  cursor: pointer;
+  border: 0.5px solid white;
+  border-radius: 4px;
+  width: 150px;
+  height: 30px;
+  text-align: center;
+  margin-top: 40px;
+  color: aliceblue;
+}
+
+.tablero{
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+}
+
+#status{
+  padding-top: 30px;
+  font-size: 30px;
+}
+
+.square:nth-child(7),.square:nth-child(8),.square:nth-child(9){
+  border-bottom: 0px;
+}
+
+.square:nth-child(1),.square:nth-child(2),.square:nth-child(3){
+  border-top: 0px;
+}
+.square.square:nth-child(3n){
+  border-right: 0px;
+}
+.square:nth-child(3n+1){
+  border-left: 0px;
 }
